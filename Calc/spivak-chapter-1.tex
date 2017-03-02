@@ -1,0 +1,167 @@
+%=========SETUP===========================
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{datetime2}
+\usepackage{enumerate}
+
+\usepackage{syntonly}
+%\syntaxonly
+
+%============BASIC SETTINGS==================
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1,1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ : \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setlength\parskip{\baselineskip}
+
+%=================CREATE PROBLEM SECTIONS====================
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+%===HOMEWORK PROBLEM ENVIRONMENT
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+%
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+%===========HOMEWORK DETAILS=================
+%   - Title
+%   - Class
+%   - Author
+%
+\newcommand{\hmwkTitle}{\#1. Basic Properties of Numbers}
+\newcommand{\hmwkClass}{Calculus}
+\newcommand{\hmwkAuthorName}{\textbf{Alexandre Leibler}}
+
+%
+%=============TITLE PAGE=========================
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Last modified\ on\ \today}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+
+\begin{document}
+
+    \maketitle
+
+    \pagebreak
+
+    \begin{homeworkProblem}
+        Prove the following:
+        \begin{enumerate}[(i).]
+            \item If \(ax = a\) for some number \(a \neq 0\), then \(x = 1\).
+            \item \((x^2 - y^2) = (x - y)(x + y)\).
+            \item If \(x^2 = y^2\), then \(x = y\) or \(x = -y\).
+            \item \((x^3 - y^3) = (x - y)(x^2 + xy + y^2)\).
+            \item \((x^n - y^n) = (x - y)(x^{n-1} + x^{n-2}y + \cdots + xy^{n-2} + y^{n-1})\).
+            \item \((x^3 + y^3) = (x + y)(x^2 - xy + y^2)\).
+        \end{enumerate}
+    \end{homeworkProblem}
+
+    \begin{homeworkProblem}
+        What is wrong with the following ``proof''? Let $x = y$. Then
+        \begin{align*}
+            x^2& = xy \text{,} \\
+            x^2 - y^2& = xy - y^2 \text{,} \\
+            (x + y)(x - y)& = y(x - y) \text{,}\\
+            x + y& = y \text{,}\\
+            2y& = y \text{,}\\
+            2& = 1 \text{.}
+        \end{align*}
+    \end{homeworkProblem}
+
+    \begin{homeworkProblem}
+        \begin{enumerate}[(i).]
+            \item \(\dfrac{a}{b} = \dfrac{ac}{bc}\), if \(b,c \neq 0\).
+            \item \(\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}\), if \(b,d \neq 0\).
+            \item \((ab)^{-1} = a^{-1}b^{-1}\), if \(a,b \neq 0\).
+            \item \(\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{db}\), if \(b,d \neq 0\).
+            \item \(\left. \dfrac{a}{b} \middle/ \dfrac{c}{d} \right.\), if \(b,c,d \neq 0\).
+            \item If \(b,d \neq 0\), then \(\dfrac{a}{b} = \dfrac{c}{d}\) if and only if \(ad = bc\). 
+                Also determine when \(\dfrac{a}{b} = \dfrac{b}{a}\). 
+        \end{enumerate}
+    \end{homeworkProblem}
+  
+    \begin{homeworkProblem}
+        Find all numbers $x$ for which
+        \begin{enumerate}[(i).]
+            \item \(4 - x < 3 -2x\).
+            \item \(5 - x^{2} < 8\).
+            \item \(5 - x^{2} < -2\).
+            \item \((x - 1)(x - 3) > 0\).
+            \item \(x^{2} - 2x + 2 > 0\).
+            \item \(x^{2} + x + 1 > 2\).
+            \item \(x^{2} - x + 10 > 16\).
+            \item \(x^{2} + x + 1 > 0\).
+            \item \((x - \pi)(x + 5)(x - 3) > 0\).
+            \item \((x - \sqrt[3]{2})(x - \sqrt{2}) > 0\).
+            \item \(2^{x} < 8\).
+            \item \(x + 3^{x} < 4\).
+            \item \(\dfrac{1}{x} + \dfrac{1}{1 - x} > 0\).
+            \item \(\dfrac{x - 1}{x + 1} > 0\).
+        \end{enumerate}
+    \end{homeworkProblem}
+
+\end{document}
