@@ -5,6 +5,7 @@
 \usepackage{extramarks}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{tikz}
 \usepackage{datetime2}
@@ -120,8 +121,9 @@
         \end{enumerate}
     \end{homeworkProblem}
     
-    \textbf{Solution}
+    \textbf{Solutions Problem 1}
     \begin{enumerate}[(i).]
+        %----------------------------Problem 1.(i)---------------------------------------
         \item
             \begin{proof}
                 \begin{align*}
@@ -132,6 +134,7 @@
                     &\text{consequently, } x = 1 \text{.} &&\text{(P6)} \qedhere
                 \end{align*}
             \end{proof}
+        %-----------------------------Problem 1.(ii)--------------------------------------
         \item
             \begin{proof}
                 \begin{align*}
@@ -141,15 +144,98 @@
                     &= x^{2} + xy - xy - y^{2} \text{;} &&\text{(P8)}\\
                     &= x^{2} + 0 - y^{2} \text{;} &&\text{(P3)}\\
                     &= 0 + x^{2} - y^{2} \text{;} &&\text{(P4)}\\
-                    &= 0 + (x^{2} - y^{2} \text{;} &&\text{(P1)}\\
+                    &= 0 + (x^{2} - y^{2}) \text{;} &&\text{(P1)}\\
                     &= x^2 - y^{2} \text{.} &&\text{(P2)} \qedhere
+                \end{align*}
+            \end{proof}
+        %---------------------Problem 1.(iii)-------------------------------------------
+        \item
+            First we should prove that if \(a \cdot b = 0\), then either \(a = 0\), or \(b = 0\).
+
+            \begin{proof}
+                To do this we must also prove that \(a \cdot 0 = 0\):
+                \begin{align*}
+                    0 &= 0 \text{;}\\
+                    0 + 0 &= 0 \text{;} &&\text{(P2)}\\
+                    a \cdot (0 + 0) &= a \cdot 0 \text{;}\\
+                    (a \cdot 0) + (a \cdot 0) &= a \cdot 0 \text{;} &&\text{(P9)}\\
+                    ((a \cdot 0) + (a \cdot 0)) - (a \cdot 0) &= (a \cdot 0) - (a \cdot 0) \text{;}\\
+                    (a \cdot 0) + ((a \cdot 0) - (a \cdot 0)) &= (a - a) \cdot 0 \text{;} &&\text{(P5)(P9)}\\
+                    (a \cdot 0) + ((a - a) \cdot 0) &= (0 \cdot 0) \text{;} &&\text{(P9)(P3)}\\
+                    (a \cdot 0) + (0 \cdot 0) &= (0 \cdot 0) \text{;} &&\text{(P3)}\\
+                    (a \cdot 0) + ((0 \cdot 0) - (0 \cdot 0)) &= (0 \cdot 0) - (0 \cdot 0) \text{;}\\
+                    (a \cdot 0) + 0 &= 0 \text{;} &&\text{(P3)}\\
+                    \therefore a \cdot 0 &= 0 \text{.} &&\text{(P2)} \qedhere
+                \end{align*}
+            \end{proof}
+            
+            \begin{proof}
+                Show that \((a \cdot b = 0) \implies (a = 0 \text{ or } b = 0)\)
+                \begin{align*}
+                    &\text{Given } a \cdot b = 0 \text{,}\\
+                    \\%----------------------------------------
+                    &\text{Suppose that } a \neq 0 \text{,}\\
+                    &\text{then } \exists a^{-1}: a \cdot a^{-1} = 1 \text{;} &&\text{(P7)}\\
+                    &\text{hence } a^{-1} \cdot (a \cdot b) = a^{-1} \cdot 0 \text{;}\\
+                    &\text{hence } (a^{-1} \cdot a) \cdot b = 0 \text{;} &&\text{(P5)(above proof)}\\
+                    &\text{hence } 1 \cdot b = 0 \text{;} &&\text{(P7)}\\
+                    &\text{consequently } b = 0 \text{.} &&\text{(P6)}\\
+                    \\%--------------------------------------------
+                    &\text{Suppose that } b \neq 0 \text{,}\\
+                    &\text{then } \exists b^{-1}: b \cdot b^{-1} = 1 \text{;} &&\text{(P7)}\\
+                    &\text{hence } (a \cdot b) \cdot b^{-1} = 0 \cdot b^{-1} \text{;}\\
+                    &\text{hence } a \cdot (b \cdot b^{-1}) = 0 \text{;} &&\text{(P5)(above proof)}\\
+                    &\text{hence } a \cdot 1 = 0 \text{;} &&\text{(P7)}\\
+                    &\text{consequently } a = 0 \text{.} &&\text{(P6)} \qedhere
+                \end{align*}
+            \end{proof}
+
+            \begin{proof}
+                \begin{align*}
+                    &\text{If } x^{2} = y^{2} \text{,}\\
+                    &\text{then } x^{2} - y^{2} = y^{2} - y^{2} \text{;}\\
+                    &\text{hence } x^{2} - y^{2} = 0 \text{;} &&\text{(P3)}\\
+                    &\text{hence } (x - y)\cdot(x + y) = 0 \text{;} &&\text{(see p1.ii.)}\\
+                    &\text{thus either } (x - y) = 0 \text{ or } (x + y) = 0 \text{;} && \text{(see above proof)}
+                \end{align*}
+
+                %------------CASE 1----------------------------------------
+                \textbf{Case 1:}
+                \begin{align*}
+                    &\text{If } x - y = 0 \text{,}\\
+                    &\text{then } (x - y) + y = 0 + y \text{;}\\
+                    &\text{hence } x + (-y + y) = y \text{;} &&\text{(P1)(P2)}\\
+                    &\text{hence } x + 0 = y \text{;} &&\text{(P3)}\\
+                    &\text{consequently } x = y \text{.} &&\text{(P2)}
+                \end{align*}
+              
+                %------------CASE 2-----------------------------------------
+                \textbf{Case 2:}
+                \begin{align*}
+                    &\text{If } x + y = 0 \text{,}\\
+                    &\text{then } (x + y) - y = 0 - y \text{;}\\
+                    &\text{hence } x + (y - y) = -y \text{;} &&\text{(P1)(P2)}\\
+                    &\text{hence } x + 0 = -y \text{;} &&\text{(P3)}\\
+                    &\text{consequently } x = -y \text{.} &&\text{(P2)} \qedhere
+                \end{align*}
+            \end{proof}
+
+        %-------------------Probelm 1.(iv)-------------------------------------
+        \item
+            \begin{proof}
+                \begin{align*}
+                    (x - y)(x^{2} + xy + y^{2}) &= x \cdot x^{2} + x \cdot xy + x \cdot y^{2} - y \cdot x^{2} - y \cdot xy - y \cdot y^{2} &&\text{(P9)}\\
+                    &= x^{3} + x^{2}y + xy^{2} - x^{2}y - xy^{2} - y^{3} &&\text{(P8)}\\
+                    &= x^{3} - y^{3} + (x^{2}y - x^{2}y) + (xy^{2} - xy^{2}) &&\text{(P4)(P1)}\\
+                    &= x^{3} - y^{3} + 0 + 0 &&\text{(P3)}\\
+                    &= x^{3} - y^{3} &&\text{(P2)} \qedhere
                 \end{align*}
             \end{proof}
     \end{enumerate}
 
 
     \begin{homeworkProblem}
-        What is wrong with the following ``proof''? Let $x = y$. Then
+        What is wrong with the following ``proof''? Let \(x = y\). Then
         \begin{align*}
             x^2& = xy \text{,} \\
             x^2 - y^2& = xy - y^2 \text{,} \\
@@ -159,6 +245,10 @@
             2& = 1 \text{.}
         \end{align*}
     \end{homeworkProblem}
+    
+    \textbf{Solution Problem 2}
+    Since \(x = y\), \(x - y = 0\). Therefore, the multiplicative inverse of \((x - y)\) does not exist.\\
+    This means that \((x + y)(x - y) = y(x - y)\) cannot be simplified to \(x + y = y\) (division by 0 is not defined).
 
     \begin{homeworkProblem}
         \begin{enumerate}[(i).]
